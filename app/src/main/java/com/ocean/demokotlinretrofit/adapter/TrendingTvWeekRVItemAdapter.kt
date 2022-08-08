@@ -1,0 +1,33 @@
+package com.ocean.demokotlinretrofit.adapter
+
+import android.content.Context
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.RecyclerView
+import com.ocean.demokotlinretrofit.databinding.CustomItemRvResultTrendingBinding
+import com.ocean.demokotlinretrofit.model.ResultsTrendingTvWeekModel
+
+class TrendingTvWeekRVItemAdapter (private val context: Context?) :
+    RecyclerView.Adapter<TrendingTvWeekRVItemAdapter.MyViewHolder>() {
+
+    private var list = mutableListOf<ResultsTrendingTvWeekModel>()
+
+    inner class MyViewHolder(itemView : CustomItemRvResultTrendingBinding) : RecyclerView.ViewHolder(itemView.root)
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+        val  inflater = LayoutInflater.from(parent.context)
+        val binding = CustomItemRvResultTrendingBinding.inflate(inflater, parent, false)
+        return MyViewHolder(binding)
+    }
+
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        TODO("Not yet implemented")
+    }
+
+    override fun getItemCount(): Int {
+        return list.size
+    }
+
+}
