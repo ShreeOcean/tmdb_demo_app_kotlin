@@ -7,7 +7,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view_rv_result_trending_item"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         android:layout_margin="5dp"
         app:cardElevation="5dp"
         app:cardCornerRadius="20dp"
@@ -19,45 +19,80 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/iv_poster_trending"
-            android:layout_width="100dp"
-            android:layout_height="150dp"
-            android:layout_margin="10dp"
-            android:layout_gravity="center|start"/>
-
-        <TextView
-            android:id="@+id/tv_name_trending"
+        <LinearLayout
+            android:id="@+id/ll_main_bg_img_backdrop_path"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="8dp"
-            android:textColor="@color/white"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#009688">
 
-        <TextView
-            android:id="@+id/tv_first_air_date_trending"
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="65dp"
-            android:layout_marginRight="10dp"
-            android:layout_gravity="right"
-            android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/tv_name_trending"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="8dp"
+                android:text="demo title"
+                android:textStyle="bold"
+                android:textSize="23dp"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:textColor="@color/white"/>
 
-        <TextView
-            android:id="@+id/tv_overview_trending"
-            android:layout_width="250dp"
-            android:layout_height="100dp"
-            android:layout_gravity="right|bottom"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="60dp"
-            android:textColor="@color/white"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <ImageButton
-            android:id="@+id/img_btn_item_rv_next"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:background="@drawable/icon_forward"
-            android:layout_gravity="center|bottom"
-            android:layout_margin="5dp"/>
+                <ImageView
+                    android:id="@+id/iv_poster_trending"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="5dp"
+                    android:padding="1dp"
+                    android:cropToPadding="true"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center|start"/>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_first_air_date_trending"
+                        android:layout_width="250dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:textAlignment="center"
+                        android:textSize="15sp"
+                        android:text="demo date"
+                        android:maxLines="1"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/tv_overview_trending"
+                        android:layout_width="250dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="5dp"
+                        android:textAlignment="center"
+                        android:textSize="15sp"
+                        android:text="demo date"
+                        android:textColor="@color/white" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/img_btn_item_rv_next"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/icon_forward"
+                android:layout_gravity="center|bottom"
+                android:layout_margin="5dp"/>
+
+        </LinearLayout>
 
 
     </androidx.cardview.widget.CardView>

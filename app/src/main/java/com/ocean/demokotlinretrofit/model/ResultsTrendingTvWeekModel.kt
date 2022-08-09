@@ -6,7 +6,7 @@ data class ResultsTrendingTvWeekModel(
 
     @SerializedName("adult")
     var adult : Boolean? = null,
-    @SerializedName("backdrop_path"     ) var backdropPath     : String?           = null,
+    @SerializedName("backdrop_path"     ) val backdropPath     : String,
     @SerializedName("id"                ) var id               : Int?              = null,
     @SerializedName("name"              ) var name             : String?           = null,
     @SerializedName("original_language" ) var originalLanguage : String?           = null,
