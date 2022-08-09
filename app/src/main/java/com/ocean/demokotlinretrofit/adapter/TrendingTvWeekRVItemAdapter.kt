@@ -32,7 +32,8 @@ class TrendingTvWeekRVItemAdapter (private val context: Context?) :
         holder.binding.tvOverviewTrending.text = "Overview : " + "\n" + listdata.overview
         holder.binding.tvFirstAirDateTrending.text = "First Air Date : " + listdata.firstAirDate
 
-        Glide.with(holder.itemView.context).load(listdata.backdropPath).placeholder(R.id.).into()
+        Glide.with(holder.itemView.context).load(listdata.backdropPath)
+            .placeholder(R.drawable.icon_tv).into(holder.binding.llMainBgImgBackdropPath)
 
     }
 
@@ -41,3 +42,4 @@ class TrendingTvWeekRVItemAdapter (private val context: Context?) :
     }
 
 }
+
