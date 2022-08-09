@@ -44,5 +44,10 @@ class TrendingTvWeekRVItemAdapter (private val context: Context?) :
         return list.size
     }
 
+    fun update(lists: List<ResultsTrendingTvWeekModel>){
+        this.list = lists.toMutableList()
+        notifyDataSetChanged()
+    }
+
 }
 
