@@ -30,7 +30,7 @@ class TrendingTvWeekViewModel : BaseViewModel(){
 
         showProgress.value = true
 
-        CoroutineScope(Dispatchers.IO).launch {
+        /*CoroutineScope(Dispatchers.IO).launch {
             try {
                 val trendingResponse = withContext(Dispatchers.IO){
                     TrendingOnDayRepository.getTrendingTvWeek(AppConstants.api_key)
@@ -49,7 +49,7 @@ class TrendingTvWeekViewModel : BaseViewModel(){
                 _errorMsg.value = e.message
             }
 
-        }
+        }*/
     }
 
 }
