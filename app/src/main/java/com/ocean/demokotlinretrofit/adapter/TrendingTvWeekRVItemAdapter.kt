@@ -2,20 +2,19 @@ package com.ocean.demokotlinretrofit.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.ocean.demokotlinretrofit.R
 import com.ocean.demokotlinretrofit.databinding.CustomItemRvResultTrendingBinding
-import com.ocean.demokotlinretrofit.model.ResultsTrendingTvWeekModel
-import com.ocean.demokotlinretrofit.utility.AppConstants
+import com.ocean.demokotlinretrofit.model.ResultsDataTrending
+import com.ocean.demokotlinretrofit.model.TrendingResponse
 
-class TrendingTvWeekRVItemAdapter (private val context: Context?) :
+class  TrendingTvWeekRVItemAdapter () :
     RecyclerView.Adapter<TrendingTvWeekRVItemAdapter.MyViewHolder>() {
 
-    private var list = mutableListOf<ResultsTrendingTvWeekModel>()
+    private var list = mutableListOf<ResultsDataTrending>()
 
     inner class MyViewHolder(var binding : CustomItemRvResultTrendingBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -44,9 +43,9 @@ class TrendingTvWeekRVItemAdapter (private val context: Context?) :
         return list.size
     }
 
-    fun update(lists: List<ResultsTrendingTvWeekModel>){
-        this.list = lists.toMutableList()
-        notifyDataSetChanged()
+    /** This fun setListTrendTv is for initializing the mutable list so that we don't need notifyDataSetChanged() for recycler view */
+    fun setListTrendTv(list : MutableList<ResultsDataTrending>){
+        this.list = list
     }
 
 }

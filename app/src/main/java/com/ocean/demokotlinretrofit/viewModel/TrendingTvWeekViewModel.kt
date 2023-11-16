@@ -1,39 +1,55 @@
 package com.ocean.demokotlinretrofit.viewModel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.ocean.demokotlinretrofit.model.ResultsTrendingTvWeekModel
-import com.ocean.demokotlinretrofit.model.TrendingTVWeekModel
-import com.ocean.demokotlinretrofit.retrofit.TrendingRepo
+import com.ocean.demokotlinretrofit.baseClasses.BaseViewModel
+import com.ocean.demokotlinretrofit.model.TrendingResponse
+import com.ocean.demokotlinretrofit.repository.TrendingOnDayRepository
+import com.ocean.demokotlinretrofit.utility.AppConstants
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import retrofit2.HttpException
 
-class TrendingTvWeekViewModel : ViewModel(){
+class TrendingTvWeekViewModel : BaseViewModel(){
 
-    val trendingTvWeekVM = MutableLiveData<List<ResultsTrendingTvWeekModel>>()
+    var showProgress : MutableLiveData<Boolean> = MutableLiveData()
 
-    var trendingTVWeekResponse = MutableLiveData<Boolean>()
+    var trendingTvWeekVM : MutableLiveData<TrendingResponse> = MutableLiveData()
+    val trendingTVWeekResponse : LiveData<TrendingResponse> get() = trendingTvWeekVM
+
+    private val _errorMsg = MutableLiveData<String>()
+    val errorMsg : LiveData<String> get() = _errorMsg
 
     init {
-        getData()
-        trendingTVWeekResponse.value =false
+        showProgress.value =false
     }
 
-    private fun getData() {
+    fun getDataForTrendTvWeek() {
+
+        showProgress.value = true
 
         CoroutineScope(Dispatchers.IO).launch {
-            val trendingTvData = TrendingRepo.getTrendingTvWeek().body()?.results
-            withContext(Dispatchers.Main){
-                trendingTvWeekVM.value = trendingTvData!!
+            try {
+                val trendingResponse = withContext(Dispatchers.IO){
+                    TrendingOnDayRepository.getTrendingTvWeek(AppConstants.api_key)
+                }
+                trendingTvWeekVM.value = trendingResponse.body()
+
+            }catch (e : HttpException){
+
+                showProgress.value = false
+                e.message?.let { kotlin.error(it) }
+
+            } catch (e : Exception){
+
+                showProgress.value = false
+                e.message?.let { kotlin.error(it) }
+                _errorMsg.value = e.message
             }
+
         }
     }
-
-    fun seeAllTrendingTv(){
-        trendingTVWeekResponse.value = true
-    }
-
 
 }

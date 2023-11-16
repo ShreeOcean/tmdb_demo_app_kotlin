@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="viewModel"
+            type="com.ocean.demokotlinretrofit.viewModel.TrendingTvWeekViewModel" />
+        <import type="android.view.View" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,7 +16,7 @@
         tools:context=".view.MainActivity">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_result_trending"
+            android:id="@+id/rv_main_parent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
