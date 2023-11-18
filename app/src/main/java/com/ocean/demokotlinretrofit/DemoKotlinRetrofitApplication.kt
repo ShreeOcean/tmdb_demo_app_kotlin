@@ -4,7 +4,7 @@ import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class DKRApplication : Application() {
+class DemoKotlinRetrofitApplication : Application() {
 
     /** Any custom initialization or configuration for your application.
         Dagger Hilt will generate the necessary code for the ApplicationComponent.

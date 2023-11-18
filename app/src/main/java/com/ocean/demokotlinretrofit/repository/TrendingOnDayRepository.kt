@@ -12,12 +12,6 @@ import javax.inject.Inject
 
 class TrendingOnDayRepository @Inject constructor (private val apiService: APINames){
 
-    /*private val instance = RetrofitNetwork.instance.getApis()
-
-    suspend fun getTrendingTvWeek(apiKey: String): Response<TrendingResponse>{
-        return instance.getTrendingTvWeek(apiKey)
-    }*/
-
     private val trendingAllResponse = MutableLiveData<TrendingAllResponse>()
     val trendingAllLiveData : LiveData<TrendingAllResponse> get() = trendingAllResponse
 
@@ -31,7 +25,7 @@ class TrendingOnDayRepository @Inject constructor (private val apiService: APINa
     val trendingPeopleLiveData_ : LiveData<TrendingPeopleResponse> get() = trendingPeopleResponse
 
     suspend fun getTrendingAll(){
-        val response = apiService.getTrendingAll(AppConstants.language)
+        val response = apiService.getTrendingAll(AppConstants.language, AppConstants.access_auth_token)
 
         if(response.isSuccessful && response.body() != null){
             trendingAllResponse.postValue(response.body())

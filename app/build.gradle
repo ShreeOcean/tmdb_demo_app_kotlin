@@ -91,4 +91,7 @@ dependencies {
 
     //viewModels()
     implementation 'androidx.activity:activity-ktx:1.8.0'
+
+    //circular image view
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }

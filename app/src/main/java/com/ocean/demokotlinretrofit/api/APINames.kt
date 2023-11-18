@@ -20,7 +20,7 @@ interface APINames {
     suspend fun getTrendingTvWeek(@Query("api_key") api_key : String) : Response<TrendingResponse>
 
     @GET(AppConstants.trendingAllApi)
-    suspend fun getTrendingAll(@Query(AppConstants.LANGUAGE_) language: String) : Response<TrendingAllResponse>  //@Header(AppConstants.AUTHORIZATION_)
+    suspend fun getTrendingAll(@Query(AppConstants.LANGUAGE_) language: String, @Header(AppConstants.AUTHORIZATION_) accessToken : String) : Response<TrendingAllResponse>  //@Header(AppConstants.AUTHORIZATION_)
 
     @GET(AppConstants.trendingTvApi)
     suspend fun getTrendingTv(@Query(AppConstants.LANGUAGE_) language: String): Response<TrendingTvResponse>

@@ -3,6 +3,7 @@ package com.ocean.demokotlinretrofit.adapter
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
+import com.ocean.demokotlinretrofit.databinding.AdapterTrendingAllDayBinding
 
 class MainParentAdapter : RecyclerView.Adapter<MainParentAdapter.MainViewHolder>() {
 
@@ -14,9 +15,9 @@ class MainParentAdapter : RecyclerView.Adapter<MainParentAdapter.MainViewHolder>
 
 
 
-    open class MainViewHolder(binding : ViewBinding) : RecyclerView.ViewHolder(binding.root) {
+    open class MainViewHolder(private val binding : ViewBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        class TrendingViewAdapter(private val trendingBinding : TrendingTvWeekRVItemAdapter){
+        class TrendingAllAdapter(private val trendingAllBinding : AdapterTrendingAllDayBinding) : MainViewHolder(trendingAllBinding){
 
             fun bind(){
 

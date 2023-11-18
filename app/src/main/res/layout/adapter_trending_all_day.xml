@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_view_rv_result_trending_item"
+        android:id="@+id/card_view_rv_result_trend_all"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -42,7 +42,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tv_tittle_all_trend"
+                android:id="@+id/tv_tittle_trend_all_day"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:gravity="center"
