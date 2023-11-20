@@ -1,0 +1,37 @@
+package com.ocean.demokotlinretrofit.adapter
+
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.bumptech.glide.Glide
+import com.ocean.demokotlinretrofit.databinding.AdapterTrendingPersonDayBinding
+import com.ocean.demokotlinretrofit.model.trendingPeople.ResultTrendPeople
+import com.ocean.demokotlinretrofit.utility.AppConstants
+
+class RvAdapterTrendPerson(private var trendPersonData : List<ResultTrendPeople>) : RecyclerView.Adapter<RvAdapterTrendPerson.MyViewHolder>() {
+
+    class MyViewHolder(private val binding : AdapterTrendingPersonDayBinding) : ViewHolder(binding.root) {
+        fun bind(resultTrendPeople: ResultTrendPeople) {
+            binding.tvNameTrendPeople.text = resultTrendPeople.name
+            binding.tvTrendPeopleKnownFor.text = "Known for : ${resultTrendPeople.knownForDepartment}"
+
+            Glide.with(binding.imgViewPosterPathTrendPeople)
+                .load("${AppConstants.image_base_url}${resultTrendPeople.profilePath}")
+        }
+    }
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): MyViewHolder {
+        val  inflater = LayoutInflater.from(parent.context)
+        val binding = AdapterTrendingPersonDayBinding.inflate(inflater, parent, false)
+        return MyViewHolder(binding)
+    }
+
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        holder.bind(trendPersonData[position])
+    }
+
+    override fun getItemCount(): Int = trendPersonData.size
+}

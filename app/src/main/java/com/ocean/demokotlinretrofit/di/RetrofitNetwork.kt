@@ -6,6 +6,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -20,10 +21,11 @@ internal open class RetrofitNetwork() {
         return Retrofit.Builder()
             .baseUrl(AppConstants.base_url)
             .addConverterFactory(GsonConverterFactory.create())
+            .client(provideOkHttpClient())
             .build()
     }
 
-    /*@Provides
+    @Provides
     @Singleton
     fun provideOkHttpClient() : OkHttpClient {
         return OkHttpClient.Builder()
@@ -40,7 +42,7 @@ internal open class RetrofitNetwork() {
                     .build()
             }
             .build()
-    }*/
+    }
 
     @Provides
     @Singleton

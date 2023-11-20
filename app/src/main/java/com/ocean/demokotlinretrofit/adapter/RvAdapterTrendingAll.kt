@@ -1,5 +1,6 @@
 package com.ocean.demokotlinretrofit.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -9,7 +10,10 @@ import com.ocean.demokotlinretrofit.databinding.AdapterTrendingAllDayBinding
 import com.ocean.demokotlinretrofit.model.trendingall.ResultTrendingAll
 import com.ocean.demokotlinretrofit.utility.AppConstants
 
-class RvAdapterTrendingAll(private var trendingAllData : List<ResultTrendingAll>) : RecyclerView.Adapter<RvAdapterTrendingAll.TrendingAllViewHolder>() {
+class RvAdapterTrendingAll(private var trendingAllData: List<ResultTrendingAll>) : RecyclerView.Adapter<RvAdapterTrendingAll.TrendingAllViewHolder>() {
+
+
+
     class TrendingAllViewHolder(private val binding: AdapterTrendingAllDayBinding): ViewHolder(binding.root) {
         fun bind(item : ResultTrendingAll){
             binding.tvTittleTrendAllDay.text = item.title
@@ -20,10 +24,10 @@ class RvAdapterTrendingAll(private var trendingAllData : List<ResultTrendingAll>
             binding.tvOverview.text = "Overview : ${item.overview}"
 
             Glide.with(binding.imgViewPosterPathTrendAll)// context ?
-                .load("${AppConstants.image_base_url}${item.poster_path}")
+                .load("https://image.tmdb.org/t/p/w500${item.poster_path}")
 
             Glide.with(binding.imgViewBackdropPathTrendAll)
-                .load("${AppConstants.image_base_url}${item.backdrop_path}")
+                .load("https://image.tmdb.org/t/p/w500${item.backdrop_path}")
         }
     }
 
@@ -41,4 +45,11 @@ class RvAdapterTrendingAll(private var trendingAllData : List<ResultTrendingAll>
     }
 
     override fun getItemCount(): Int = trendingAllData.size
+//    override fun getItemCount(): Int = 10
+
+    fun setListTrendAll(trendAllList: List<ResultTrendingAll>){
+        this.trendingAllData = trendAllList
+        Log.d("ListSize__1",trendAllList.size.toString())
+
+    }
 }

@@ -25,7 +25,7 @@ class TrendingOnDayRepository @Inject constructor (private val apiService: APINa
     val trendingPeopleLiveData_ : LiveData<TrendingPeopleResponse> get() = trendingPeopleResponse
 
     suspend fun getTrendingAll(){
-        val response = apiService.getTrendingAll(AppConstants.language, AppConstants.access_auth_token)
+        val response = apiService.getTrendingAll(AppConstants.language)
 
         if(response.isSuccessful && response.body() != null){
             trendingAllResponse.postValue(response.body())
@@ -52,7 +52,9 @@ class TrendingOnDayRepository @Inject constructor (private val apiService: APINa
 
     suspend fun getTrendingPeople(){
 
-        val trendPeopleResponse = apiService.getTrendingTv(AppConstants.language)
+        val trendPeopleResponse = apiService.getTrendingPerson(
+            AppConstants.language
+        )
 
         if (trendPeopleResponse.isSuccessful && trendPeopleResponse.body() != null){
 //            trendingPeopleResponse.postValue(trendPeopleResponse.body())

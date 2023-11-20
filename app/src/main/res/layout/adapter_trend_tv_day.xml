@@ -42,7 +42,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tv_tittle_trend_all_day"
+                android:id="@+id/tv_tittle_trend_tv_day"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:gravity="center"
