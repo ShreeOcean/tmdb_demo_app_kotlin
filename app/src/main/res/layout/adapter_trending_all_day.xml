@@ -27,7 +27,7 @@
             <ImageView
                 android:id="@+id/img_view_backdrop_path_trend_all"
                 android:layout_width="match_parent"
-                android:layout_height="245dp"
+                android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -36,7 +36,7 @@
                 android:id="@+id/img_view_poster_path_trend_all"
                 android:layout_width="150dp"
                 android:layout_height="200dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="150dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -58,8 +58,8 @@
                 android:layout_height="30dp"
                 android:text="Release Date : 2023-09-27"
                 android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="@+id/img_view_backdrop_path_trend_all"
-                app:layout_constraintStart_toStartOf="@+id/guideline" />
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/img_view_backdrop_path_trend_all" />
 
             <TextView
                 android:id="@+id/tv_original_language_trend_all"
@@ -84,7 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_begin="193dp" />
+                app:layout_constraintGuide_percent="0.5" />
 
             <TextView
                 android:id="@+id/tv_vote_average"
@@ -101,6 +101,7 @@
                 android:layout_height="70dp"
                 android:text="Overview : ---------"
                 android:textColor="@color/white"
+                android:padding="5dp"
                 app:layout_constraintTop_toBottomOf="@+id/img_view_poster_path_trend_all" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

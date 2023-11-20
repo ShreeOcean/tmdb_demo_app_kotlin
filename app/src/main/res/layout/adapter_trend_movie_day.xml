@@ -36,7 +36,7 @@
                 android:id="@+id/img_view_poster_path_movie"
                 android:layout_width="150dp"
                 android:layout_height="200dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="90dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -55,16 +55,16 @@
             <TextView
                 android:id="@+id/tv_release_date_trend_all"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:text="Release Date : 2023-09-27"
                 android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="@+id/img_view_backdrop_path_movie"
-                app:layout_constraintStart_toStartOf="@+id/guideline" />
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/img_view_backdrop_path_movie" />
 
             <TextView
                 android:id="@+id/tv_original_language"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:text="Original Language: English"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -73,7 +73,7 @@
             <TextView
                 android:id="@+id/tv_media_type"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:text="Media Type : Movie"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -84,12 +84,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.47" />
+                app:layout_constraintGuide_percent="0.5" />
 
             <TextView
                 android:id="@+id/tv_vote_average"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:text="Average Vote : 8.237"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
