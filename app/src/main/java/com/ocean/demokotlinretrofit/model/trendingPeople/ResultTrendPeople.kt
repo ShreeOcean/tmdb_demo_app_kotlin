@@ -3,14 +3,14 @@ package com.ocean.demokotlinretrofit.model.trendingPeople
 import com.google.gson.annotations.SerializedName
 
 data class ResultTrendPeople(
-    @SerializedName("adult"                ) var adult              : Boolean?            = null,
-    @SerializedName("id"                   ) var id                 : Int?                = null,
-    @SerializedName("name"                 ) var name               : String?             = null,
-    @SerializedName("original_name"        ) var originalName       : String?             = null,
-    @SerializedName("media_type"           ) var mediaType          : String?             = null,
-    @SerializedName("popularity"           ) var popularity         : Double?             = null,
-    @SerializedName("gender"               ) var gender             : Int?                = null,
-    @SerializedName("known_for_department" ) var knownForDepartment : String?             = null,
-    @SerializedName("profile_path"         ) var profilePath        : String?             = null,
-    @SerializedName("known_for"            ) var knownFor           : ArrayList<KnownFor> = arrayListOf()
+    var adult              : Boolean,
+    var id                 : Int,
+    var name               : String,
+    var original_name       : String,
+    var media_type          : String,
+    var popularity         : Double,
+    var gender             : Int,
+    var known_for_department : String,
+    var profile_path        : String,
+    var known_for           : ArrayList<KnownFor> = arrayListOf()
 )

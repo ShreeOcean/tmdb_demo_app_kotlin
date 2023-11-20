@@ -23,10 +23,10 @@
             android:id="@+id/con_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#5B5567">
+            android:background="#000000">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/img_view_poster_path_trend_people"
+                android:id="@+id/img_view_profile_trend_people"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_marginTop="5dp"
@@ -45,7 +45,7 @@
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/img_view_poster_path_trend_people" />
+                app:layout_constraintTop_toBottomOf="@+id/img_view_profile_trend_people" />
 
             <TextView
                 android:id="@+id/tv_trend_people_known_for"

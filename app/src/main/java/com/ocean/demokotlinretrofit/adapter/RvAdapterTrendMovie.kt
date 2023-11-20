@@ -22,9 +22,11 @@ class RvAdapterTrendMovie(private var trendingMovie : List<ResultTrendingMovie>)
 
             Glide.with(binding.imgViewPosterPathMovie)// context ?
                 .load("${AppConstants.image_base_url}${item.poster_path}")
+                .into(binding.imgViewPosterPathMovie)
 
             Glide.with(binding.imgViewBackdropPathMovie)
                 .load("${AppConstants.image_base_url}${item.backdrop_path}")
+                .into(binding.imgViewBackdropPathMovie)
         }
     }
     override fun onCreateViewHolder(

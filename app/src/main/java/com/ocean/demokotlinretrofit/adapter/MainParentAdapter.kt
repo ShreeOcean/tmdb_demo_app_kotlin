@@ -50,6 +50,7 @@ class MainParentAdapter : RecyclerView.Adapter<MainParentAdapter.MainViewHolder>
         class TrendingAllViewHolder(private val trendingAllBinding: HorizontalRvLayoutBinding) :
             MainViewHolder(trendingAllBinding) {
             fun bind(trendingAllList: List<ResultTrendingAll>) {
+
                 trendingAllBinding.txtServiceHeader.text = "Trending All Today:"
                 val trendAllAdapter = RvAdapterTrendingAll(trendingAllList)
                 trendingAllBinding.rvChildLayout.layoutManager = LinearLayoutManager(

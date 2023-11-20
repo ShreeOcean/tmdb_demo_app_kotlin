@@ -57,7 +57,7 @@ class TrendingOnDayRepository @Inject constructor (private val apiService: APINa
         )
 
         if (trendPeopleResponse.isSuccessful && trendPeopleResponse.body() != null){
-//            trendingPeopleResponse.postValue(trendPeopleResponse.body())
+            trendingPeopleResponse.postValue(trendPeopleResponse.body())
         }//TODO: handle error code goes here
     }
 

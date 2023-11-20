@@ -23,9 +23,11 @@ class RvAdapterTrendTv (private val trendTvData : List<ResultTrendingTv>) : Recy
 
             Glide.with(binding.imgViewPosterPathTrendTv)// context ?
                 .load("${AppConstants.image_base_url}${item.poster_path}")
+                .into(binding.imgViewPosterPathTrendTv)
 
             Glide.with(binding.imgViewBackdropPathTrendTv)
                 .load("${AppConstants.image_base_url}${item.backdrop_path}")
+                .into(binding.imgViewBackdropPathTrendTv)
         }
     }
     override fun onCreateViewHolder(

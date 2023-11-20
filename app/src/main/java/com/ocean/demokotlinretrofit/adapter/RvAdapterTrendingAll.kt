@@ -24,10 +24,12 @@ class RvAdapterTrendingAll(private var trendingAllData: List<ResultTrendingAll>)
             binding.tvOverview.text = "Overview : ${item.overview}"
 
             Glide.with(binding.imgViewPosterPathTrendAll)// context ?
-                .load("https://image.tmdb.org/t/p/w500${item.poster_path}")
+                .load("${AppConstants.image_base_url}${item.poster_path}")
+                .into(binding.imgViewPosterPathTrendAll)
 
             Glide.with(binding.imgViewBackdropPathTrendAll)
-                .load("https://image.tmdb.org/t/p/w500${item.backdrop_path}")
+                .load("${AppConstants.image_base_url}${item.backdrop_path}")
+                .into(binding.imgViewBackdropPathTrendAll)
         }
     }
 
@@ -45,7 +47,6 @@ class RvAdapterTrendingAll(private var trendingAllData: List<ResultTrendingAll>)
     }
 
     override fun getItemCount(): Int = trendingAllData.size
-//    override fun getItemCount(): Int = 10
 
     fun setListTrendAll(trendAllList: List<ResultTrendingAll>){
         this.trendingAllData = trendAllList

@@ -14,10 +14,11 @@ class RvAdapterTrendPerson(private var trendPersonData : List<ResultTrendPeople>
     class MyViewHolder(private val binding : AdapterTrendingPersonDayBinding) : ViewHolder(binding.root) {
         fun bind(resultTrendPeople: ResultTrendPeople) {
             binding.tvNameTrendPeople.text = resultTrendPeople.name
-            binding.tvTrendPeopleKnownFor.text = "Known for : ${resultTrendPeople.knownForDepartment}"
+            binding.tvTrendPeopleKnownFor.text = "Known for : ${resultTrendPeople.known_for_department}"
 
-            Glide.with(binding.imgViewPosterPathTrendPeople)
-                .load("${AppConstants.image_base_url}${resultTrendPeople.profilePath}")
+            Glide.with(binding.imgViewProfileTrendPeople)
+                .load("${AppConstants.image_base_url}${resultTrendPeople.profile_path}")
+                .into(binding.imgViewProfileTrendPeople)
         }
     }
     override fun onCreateViewHolder(
