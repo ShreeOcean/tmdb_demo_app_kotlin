@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">DemoKotlinRetrofit</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="biography_demo">Biography : Denzel Hayes Washington, Jr. (born December 28, 1954) is an American actor, screenwriter, director and film producer. He first rose to prominence when he joined the cast of the medical drama St. Elsewhere, playing Dr. Philip Chandler for six years. He has received much critical acclaim for his work in film since the 1990s, including for his portrayals of real-life figures, such as Steve Biko, Malcolm X, Rubin ‘Hurricane’ Carter, Melvin B. Tolson, Frank Lucas, and Herman Boone. Washington has received two Academy Awards, two Golden Globe awards, and a Tony Award. He is notable for winning the Best Supporting Actor Oscar for his part in Glory in 1989, and the Academy Award for Best Actor in 2001 for his role in the film Training Day.</string>
+    <string name="also_know_as">Also know As : Дензел Вашингтон,丹泽尔·华盛顿,デンゼル・ワシントン,เดนเซล วอชิงตัน,Denzel Hayes Washington, Jr.,Ντένζελ Ουάσινγκτον,Denzel Hayes Washington,დენზელ ვაშინგტონი, 덴젤 워싱턴, 丹佐·华盛顿</string>
 </resources>
