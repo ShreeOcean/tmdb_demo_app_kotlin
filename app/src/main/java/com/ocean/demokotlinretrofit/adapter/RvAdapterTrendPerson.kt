@@ -2,14 +2,12 @@ package com.ocean.demokotlinretrofit.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.ocean.demokotlinretrofit.databinding.AdapterTrendingPersonDayBinding
 import com.ocean.demokotlinretrofit.model.trendingPeople.ResultTrendPeople
 import com.ocean.demokotlinretrofit.utility.AppConstants
-import com.ocean.demokotlinretrofit.view.fragments.home.HomeFragmentDirections
 
 class RvAdapterTrendPerson(private var trendPersonData : List<ResultTrendPeople>) : RecyclerView.Adapter<RvAdapterTrendPerson.MyViewHolder>() {
 
@@ -50,5 +48,4 @@ class RvAdapterTrendPerson(private var trendPersonData : List<ResultTrendPeople>
     }
 
     override fun getItemCount(): Int = trendPersonData.size
-
 }

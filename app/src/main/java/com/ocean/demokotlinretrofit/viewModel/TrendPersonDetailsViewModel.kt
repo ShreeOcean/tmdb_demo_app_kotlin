@@ -15,6 +15,7 @@ import javax.inject.Inject
 @HiltViewModel
 class TrendPersonDetailsViewModel @Inject constructor(
     private val trendPersonRepository: TrendPersonDetailsRepository,
+    private val trendPersonDetailsResponse: TrendPersonDetailsResponse
 ) : ViewModel() {
 
     private val trendPersonDetailMutable: MutableStateFlow<NetworkResult<TrendPersonDetailsResponse>> =
@@ -30,15 +31,14 @@ class TrendPersonDetailsViewModel @Inject constructor(
             trendPersonDetailMutable.value = NetworkResult.Error(it.message)
             it.printStackTrace()
         }
-            .collect {
-                if (it.isSuccessful) {
-                    if (it.body() != null) {
+            .collect{
+                if (it.isSuccessful){
+                    if (it.body() != null){
                         trendPersonDetailMutable.value = NetworkResult.Success(it.body())
-                    } else {
-                        trendPersonDetailMutable.value =
-                            NetworkResult.Error(it.message(), it.body())
+                    }else{
+                        trendPersonDetailMutable.value = NetworkResult.Error(it.message(), it.body())
                     }
-                } else {
+                }else{
                     trendPersonDetailMutable.value = NetworkResult.Error(it.message())
                 }
             }
