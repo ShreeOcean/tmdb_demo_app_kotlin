@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/HomeFragment">
 
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.ocean.demokotlinretrofit.view.fragments.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_frag_trend_people_depend_frag"
+            app:destination="@+id/trendPeopleDetailsFrag" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/trendMovieDetailsFrag"
+        android:name="com.ocean.demokotlinretrofit.view.fragments.trendingmoviedetails.TrendMovieDetailsFrag"
+        android:label="fragment_trend_movie_details"
+        tools:layout="@layout/fragment_trend_movie_details">
+
+    </fragment>
+    <fragment
+        android:id="@+id/trendPeopleDetailsFrag"
+        android:name="com.ocean.demokotlinretrofit.view.fragments.trendpeopledetails.TrendPeopleDetailsFrag"
+        android:label="fragment_trend_people_details"
+        tools:layout="@layout/fragment_trend_people_details" >
+        <argument
+            android:name="trendPersonDetailId"
+            app:argType="integer"/>
+    </fragment>
+    <fragment
+        android:id="@+id/tvDetailsFrag"
+        android:name="com.ocean.demokotlinretrofit.view.fragments.tv.TvDetailsFrag"
+        android:label="fragment_tv_details"
+        tools:layout="@layout/fragment_tv_details" >
+
+    </fragment>
 </navigation>

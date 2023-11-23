@@ -7,7 +7,10 @@ import com.ocean.demokotlinretrofit.model.trendingMovie.TrendingMovieResponse
 import com.ocean.demokotlinretrofit.model.trendingPeople.TrendingPeopleResponse
 import com.ocean.demokotlinretrofit.model.trendingall.TrendingAllResponse
 import com.ocean.demokotlinretrofit.model.trendingtv.TrendingTvResponse
+import com.ocean.demokotlinretrofit.model.trendpersondetails.TrendPersonDetailsResponse
 import com.ocean.demokotlinretrofit.utility.AppConstants
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class TrendingOnDayRepository @Inject constructor (private val apiService: APINames){
@@ -23,6 +26,7 @@ class TrendingOnDayRepository @Inject constructor (private val apiService: APINa
 
     private val trendingPeopleResponse = MutableLiveData<TrendingPeopleResponse>()
     val trendingPeopleLiveData_ : LiveData<TrendingPeopleResponse> get() = trendingPeopleResponse
+
 
     suspend fun getTrendingAll(){
         val response = apiService.getTrendingAll(AppConstants.language)
@@ -60,6 +64,5 @@ class TrendingOnDayRepository @Inject constructor (private val apiService: APINa
             trendingPeopleResponse.postValue(trendPeopleResponse.body())
         }//TODO: handle error code goes here
     }
-
 
 }
